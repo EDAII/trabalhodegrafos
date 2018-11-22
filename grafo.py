@@ -20,10 +20,8 @@ class No:
           n2lista=[]
           n2lista.append(self) 
           for n in n2lista:
-              # contador de visita bem aqui. 
              if(self.isunknow(n)):
-                print("b")
-                print(n)    
+                print("b")# contador de visita bem aqui.     
                 n.bool2=True      
                 for n2 in n.nlista:
                         if(self.isunknow(n2)):
