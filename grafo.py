@@ -9,7 +9,8 @@ class No:
         self.idui=n2     
         self.bool2=False     
       def registrar(self,noprincipal):
-          noprincipal.nlista.append(self)   
+          return noprincipal.nlista.append(self) 
+   
       def addno(self, n):
           self.nlista.append(n)
       def getno(self, i):
@@ -19,7 +20,8 @@ class No:
             a=randint(1,100)
             print(a)  
             self.nlista.append(No(a))
-            self.registrar(noprincipal)
+            noprincicipal=self.registrar(noprincipal)
+          return noprincipal
       def travesialargura(self): 
           n2lista=[]
           n2lista.append(self) 
@@ -34,7 +36,6 @@ class No:
          
                            
       def  retornatamanho(self):
-           self.bool2=True  
            return len(self.nlista) 
 
       def isunknow(self,a):
@@ -87,13 +88,12 @@ def main():
    b=int(a)
    p1=No(b)     
    i=0  
-   p1.criarindividuos(b,p1)
-   while(p1.eindividuo(i)!=True):
+   p2=p1.criarindividuos(b,p1)
+   while(p2.eindividuo(i)!=True):
        i=i+1  
-   n=p1.nlista[i]      
-   n.nlista.append(2)
-   n.criaramigo(p1) 
-   p1.travesialargura()   
+   n=p2.nlista[i]      
+   n.criaramigo(p2) 
+   p2.travesialargura()   
    print("o tamanho e:", p1.retornatamanho())        
 
 main()
